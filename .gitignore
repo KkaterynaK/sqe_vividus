@@ -17,3 +17,5 @@ output/
 
 # macOS system files
 .DS_Store
+
+steps.txt
