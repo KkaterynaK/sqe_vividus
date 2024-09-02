@@ -8,11 +8,11 @@ apply from: "${buildSystemPath}/vividus-test-project.gradle"
 
 
 ext {
-    vividusVersion = '0.6.11'
+    vividusVersion = '0.6.13'
 }
 
 dependencies {
-    implementation platform(group: 'org.vividus', name: 'vividus-bom', version: '0.6.11')
+    implementation platform(group: 'org.vividus', name: 'vividus-bom', version: '0.6.13')
     implementation(group: 'org.vividus', name: 'vividus')
     implementation(group: 'org.vividus', name: 'vividus-plugin-rest-api')
     implementation(group: 'org.vividus', name: 'vividus-plugin-json')
