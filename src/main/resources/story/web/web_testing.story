@@ -1,16 +1,13 @@
-Scenario 1: Verify the title of EPAM.com
-    Given I am on page with URL 'https://www.epam.com'
-    Then the page title is 'EPAM | Software Engineering & Product Development Services'
+Description: This story contains scenarios for testing the EPAM.com website functionalities including title verification, theme switching, and language change.
 
+Scenario: 1 Verify the title of EPAM.com
+Given I am on page with URL `https://www.epam.com/`Then page title IS_EQUAL_TO `EPAM | Software Engineering & Product Development Services`
 
-Scenario 2: Verify the ability to switch Light/Dark mode on EPAM.com
-    Given I am on page with URL 'https://www.epam.com'
-    When I click on element located by css '.dark-light-toggle' # Replace with actual CSS locator of the toggle
-    Then element located by css 'body' has attribute 'data-theme' with value that is not '$initialTheme' # Replace 'data-theme' with the actual theme attribute and '$initialTheme' with initial theme value
+Scenario: 2 Verify the ability to switch Light/Dark mode on EPAM.com
+Given I am on page with URL `https://www.epam.com/`When I click on element located by `cssSelector(.dark-light-toggle)`
+When I change context to element located by `cssSelector(body)`
+Then context element has CSS property `data-theme` with value that NOT_EQUAL_TO `$initialTheme`#Then element located by `cssSelector(body)` has attribute `data-theme` with value that is not '$initialTheme'
 
-
-Scenario 3: Verify the ability to change site's language to Ukrainian
-    Given I am on page with URL 'https://www.epam.com'
-    When I click on element located by css '.location-selector__button' # Replace with actual CSS locator for language selector
-    When I click on element located by css '.location-selector__option[lang="uk"]' # Replace with actual CSS locator for Ukrainian language option
-    Then the page title contains the text 'EPAM | Інженерія програмного забезпечення та розробка продуктів' # Replace with a valid Ukrainian title or content-specific verification
+Scenario: 4 Verify the ability to change site's language to UkrainianGiven I am on page with URL `https://www.epam.com/`
+When I click on element located by `cssSelector(.location-selector__button)`
+When I click on element located by `cssSelector(.location-selector__option[lang="uk"])`Then page title CONTAINS `EPAM | Інженерія програмного забезпечення та розробка продуктів`
